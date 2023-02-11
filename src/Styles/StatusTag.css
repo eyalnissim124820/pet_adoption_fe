@@ -1,0 +1,21 @@
+.statusTag {
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    color: rgb(0, 0, 0, 0.7);
+    user-select: none;
+    gap: 10px;
+}
+#statusAvailable{
+    fill: #3DAE08;
+}
+#statusFostered{
+    fill: #FBBA6D;
+}
+#statusAdopted{
+    fill: #B684FA;
+}
+
+.statusTag small {
+    margin: 0px;
+}

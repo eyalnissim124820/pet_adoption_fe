@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+.Pet-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.petSpec h3 {
+    color: #313131;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.petBio h3 {
+    font-weight: 700;
+    color: rgba(31, 33, 34, 1);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+#petName {
+    font-size: 31px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+#petName h3{
+    font-size: 31px;
+
+}
+
+.Pets-header-h3 {
+    padding-left: 20px;
+    color: #313131;
+    font-weight: 400;
+    text-align: left;
+    margin: 0px;
+    font-size: 21px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+}
+
+.PetPage-container-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.PetPage-container-header h3 {
+    color: #313131;
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+
+.backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 7px;
+}
+
+.backButton:hover {
+    background-color: #F0E8FF;
+}
+
+.backButton:active {
+    background-color: #dbccf7;
+}
+
+.backButton img {
+    height: 15px;
+    width: 15px;
+    margin-right: 2px;
+}
+
+.PetPage-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px 0px 20px;
+    gap: 4%;
+    overflow-y: scroll;
+}
+
+.PetBigPic {
+    width: 50%;
+}
+
+.PetBigPic img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    border: 4px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 40px rgba(168, 168, 168, 0.6));
+    border-radius: 20px;
+}
+
+.petCardBody {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0px 20px 0px 20px;
+}
+
+.petStatusAndFavorit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    width: 120px;
+    position: absolute;
+    right: 20px;
+    gap: 8px;
+    width: 16%;
+}
+
+.petStatusAndFavorit p {
+    margin: 0px;
+    padding-top: 10px;
+}
+
+.petPagefav-false {
+    background-image: url('../attachments/images/FavIcon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.petPagefav-false:hover {
+    background-image: url('../attachments/images/FavIcon\(hover\).svg');
+}
+
+.petPagefav-false:active {
+    background-image: url('../attachments/images/FavIcon\(Saved\).svg');
+}
+
+.petPagefav-true {
+    background-image: url('../attachments/images/FavIcon\(Saved\).svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.petPagefav-true:active {
+    background-image: url('../attachments/images/FavIcon.svg');
+}
+
+.edit{
+    height: 33px;
+}
+
+.petBio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: #6A6A6A;
+}
+
+.petBio p {
+    margin: 0px;
+    text-align: center;
+}
+
+.petSpec {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.petSpec {
+    padding-left: 0px;
+    padding-top: 20px;
+}
+
+.petSpec li {
+    display: flex;
+    background-color: #F6F6F8;
+    padding: 10px;
+    border-radius: 8px;
+    gap: 4px;
+}
+
+.petSpec h3 {
+    margin: 0px;
+    padding: 0px;
+    color: #1F2122;
+}
+
+.petSpec p {
+    margin: 0px;
+    padding: 0px;
+    color: #FAB35E;
+    font-weight: 600;
+}
+
+.petButtons {
+    height: fit-content;
+    /* border-top: 1px solid #E1E1EC; */
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0px 10px 10px;
+    gap: 10px;
+}
+
+.petButtons div {
+    display: flex;
+    gap: 10px;
+}
+
+.petButtons button {
+    padding: 8px 14px 8px 14px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.adoptButton {
+    border: none;
+    background: #8744E1;
+}
+
+.adoptButton:hover {
+    background-color: #B684FA;
+}
+
+.adoptButton:active {
+    background-color: #4A2082;
+}
+
+.fosterButton {
+    border: none;
+    background: #FAB35E;
+}
+
+.fosterButton:hover {
+    background-color: #f7c17f;
+}
+
+.fosterButton:active {
+    background-color: #d4913f;
+}
+
+.returnButton {
+    border: none;
+    background: #8844e183;
+}
+
+.returnButton:hover {
+    background-color: #b584fa76;
+}
+
+.returnButton:active {
+    background-color: #4a20827a;
+}
+
+.deletePet {
+    border: none;
+    background: none;
+    padding: 8px 14px 8px 14px;
+    border-radius: 10px;
+    color: rgba(224, 0, 0, 1) !important;
+    white-space: nowrap;
+    text-overflow: clip;
+    font-weight: 700;
+}
+
+.deletePet:hover {
+    /* background-color: rgba(255, 0, 0, 0.645); */
+    /* color: white !important; */
+    text-decoration: underline;
+}
+
+.deletePet:active {
+    background-color: rgba(186, 0, 0, 0.645);
+    color: white !important;
+}

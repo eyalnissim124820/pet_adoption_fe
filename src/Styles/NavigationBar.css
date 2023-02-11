@@ -1,0 +1,200 @@
+.NavigationManu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 25px;
+    height: 100%;
+}
+
+.navigation-buttons {
+    margin: 0px;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 260px;
+}
+
+.linkButton {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0000006d;
+    width: 100%;
+}
+
+.navigation-buttons .linkButton {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    list-style: none;
+    background: #F6F6F8;
+    border-radius: 10px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    width: 100%;
+    font-weight: bold;
+    color: #0000006d;
+    user-select: none;
+    cursor: pointer;
+    gap: 10px;
+
+}
+
+.navigation-buttons .linkButton p {
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    font-weight: 400;
+}
+
+.navigation-buttons .linkButton:hover {
+    background: #ECECF1;
+}
+
+.navigation-buttons .linkButton:active {
+    background-color: #CBCBD6;
+}
+
+#userProfileButton {
+    border-radius: 8px;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+#userProfileButton p {
+    width: 100%;
+}
+
+.active {
+    background: #8744E1 !important;
+    color: white !important;
+}
+
+.active img {
+    filter: brightness(0) invert(1);
+}
+
+.active p {
+    font-weight: 500 !important;
+}
+
+
+
+.navigation-buttons .linkButton img {
+    height: 20px;
+    width: 30px;
+}
+
+.userDisplay {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(135, 68, 225, 0.04);
+    border-top: 1px solid rgba(135, 68, 225, 0.35);
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 180px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+}
+
+.welcomeName {
+    text-align: left;
+    padding-left: 5px;
+    line-height: 22px;
+}
+
+.welcomeName b {
+    color: #3E0091;
+    font-weight: 400;
+    /* color: linear-gradient(106.39deg, #8744E1 3.78%, #FABA6E 49.08%); */
+}
+
+.active .welcomeName b {
+    font-weight: 500;
+    color: white;
+}
+
+
+
+#transUnderline {
+    color: transparent;
+}
+
+.userInfo:hover {
+    background-color: #F0E8FF;
+}
+
+.userInfo img {
+    height: 38px;
+}
+
+.userInfo button {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.userInfo button img {
+    height: 20px;
+    width: 20px;
+}
+
+.logOutButton {
+    border: none;
+    background: #FFFFFF;
+    border-radius: 6px;
+    color: #8744E1;
+    height: 30px;
+    cursor: pointer;
+}
+
+.logOutButton:hover {
+    background-color: #BD9CEA;
+    color: #3E0091;
+}
+
+.logOutButton:active {
+    background-color: #8744E1;
+    color: white;
+}
+
+.LogInButton {
+    border: none;
+    background-color: #8744E1;
+    border-radius: 6px;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+
+.LogInButton:hover {
+    background-color: #6c36b3;
+    color: white;
+}
+
+.LogInButton:active {
+    background-color: #4f2785;
+    color: white;
+}

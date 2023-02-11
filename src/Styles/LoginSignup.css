@@ -1,0 +1,18 @@
+#switch-container {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+#skipLogin {
+    padding-top: 10px;
+    color: #8744E1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#skipLogin:hover {
+    color: #550db3;
+}
+#skipLogin:active {
+    color: #2f0665;
+}

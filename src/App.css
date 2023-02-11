@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "regular";
+  src: local("SF-Pro"),
+    url("./Styles/Fonts/SF-Pro.ttf") format("truetype");
+}
+
+*{
+  font-weight: 200;
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+}

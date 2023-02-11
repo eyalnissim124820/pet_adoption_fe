@@ -1,0 +1,41 @@
+.userProfile-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.userProfile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F6F8;
+}
+
+.userProfile-header h1{
+    padding-left: 20px;
+    color: #313131;
+    font-weight: 400;
+    text-align: left;
+    margin: 0px;
+    font-size: 21px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+}
+
+.userProfile-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-bottom: 5%;
+}
+.userProfile-container img {
+    height: 25%;
+    width: 25%;
+}
+
+
