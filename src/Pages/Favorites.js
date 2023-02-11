@@ -27,7 +27,7 @@ export default function Favorites() {
 
   useEffect(() => {
     setList()
-  }, [])
+  }, [favorites])
 
   return (
     <div className='Favorites-page'>
