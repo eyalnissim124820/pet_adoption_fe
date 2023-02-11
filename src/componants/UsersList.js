@@ -9,7 +9,7 @@ export default function UsersList({ UsersListToDisplay }) {
         <>
             <ul className='listOfUsers'>
                 {
-                    UsersListToDisplay.map((user) => (
+                    UsersListToDisplay?.map((user) => (
                         <li key={user?._id} className='userRow'><UserRow user={user} /></li>
                     ))
                 }
