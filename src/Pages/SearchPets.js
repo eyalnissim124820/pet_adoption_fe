@@ -6,7 +6,7 @@ import plusIcon from '../attachments/images/plusIcon.svg'
 
 import AddNewPetForm from '../componants/AddNewPetForm';
 import Modal from "../componants/Modal"
-import LoginSignup from "../componants/LoginSignup"
+import LoadingSpinner from "../componants/LoadingSpinner"
 
 import { usePet } from '../Contexts/PetContext'
 import { useAuth } from '../Contexts/AuthContext';
@@ -100,7 +100,7 @@ export default function SearchPets() {
           </div>
           <hr id="headerDiv"></hr>
           <div className='allPets'>
-            {allPets[0] ? <PetsList petListToDisplay={allPets} setLoginModal={setLoginModal} /> : <h1>No Pets Found</h1>}
+            {allPets[0] ? <PetsList petListToDisplay={allPets} setLoginModal={setLoginModal} /> : <LoadingSpinner />}
           </div>
         </div>
       </div>
