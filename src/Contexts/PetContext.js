@@ -39,7 +39,7 @@ export function PetContextProvider({ children }) {
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`);
             setPetByID(response.data)
         } catch (error) {
-            console.log(error);
+            return(error);
         }
     }
 
@@ -48,7 +48,7 @@ export function PetContextProvider({ children }) {
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`);
             return response.data;
         } catch (error) {
-            console.log(error)
+            return(error)
         }
 
     }
@@ -58,7 +58,7 @@ export function PetContextProvider({ children }) {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets`, petToPost);
             return response;
         } catch (error) {
-            console.log(error);
+            return(error);
         }
     }
 
@@ -66,14 +66,14 @@ export function PetContextProvider({ children }) {
         try {
             axios.delete(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`)
         } catch (error) {
-            console.log(error);
+            return(error);
         }
     }
 
     async function savePet(userID, petID) {
         try {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets/save`, { userID, petID });
-            console.log(response.data);
+           return(response.data);
         } catch (error) {
             console.log(error);
         }

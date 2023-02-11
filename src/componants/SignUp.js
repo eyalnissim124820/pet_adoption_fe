@@ -46,7 +46,6 @@ export default function NavigationBarSignUp({ setIsOpen, setToggle }) {
                     }
                 }
             } catch (error) {
-                console.log(error.response.data);
                 setErrorMsg(error.response.data);
             }
         } else {
