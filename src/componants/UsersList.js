@@ -11,7 +11,7 @@ export default function UsersList({ UsersListToDisplay }) {
     const sound = new Howl({
         src: [hover]
     })
-
+    Howler.volume(0.8)
     return (
         <>
             <ul className='listOfUsers'>

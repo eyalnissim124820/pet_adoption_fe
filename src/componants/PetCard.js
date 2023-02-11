@@ -50,7 +50,7 @@ export default function PetCard({ petData }) {
     }, [])
 
 
-    Howler.volume(1.0)
+    Howler.volume(0.8)
 
     return (
         <div>
