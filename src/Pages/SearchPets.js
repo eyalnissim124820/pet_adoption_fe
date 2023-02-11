@@ -42,7 +42,7 @@ export default function SearchPets() {
     verifyUser()
     onLoad()
     getFavorites(currentUser?.userId)
-  }, [])
+  }, [addPetOpen])
 
   function onLoad() {
     getUserByID(currentUser?.userId)
