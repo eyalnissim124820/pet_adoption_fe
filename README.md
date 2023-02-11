@@ -1,6 +1,6 @@
-#My Full-Stack pet adoption dashboard system (**desktop version only).
+**My Full-Stack pet adoption dashboard system (**desktop version only).**
 
-##Deployment link: https://pet-adoption-fe-theta.vercel.app/
+**Deployment link: https://pet-adoption-fe-theta.vercel.app/**
 
 in order to run it on your computer:
 1.Install Node.js.
