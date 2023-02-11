@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useAuth } from './AuthContext';
 
 const UserContext = React.createContext();
-const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 export function useUser() {
     return useContext(UserContext);
@@ -20,7 +19,7 @@ export function UserContextProvider({ children }) {
 
     async function getAllUsers() {
         try {
-            const response = await axios.get(`${BASE_URL}/users`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users`);
             setAllUsers(response.data)
         } catch (error) {
             console.log(error);
@@ -29,7 +28,7 @@ export function UserContextProvider({ children }) {
 
     async function getUserByID(id) {
         try {
-            const response = await axios.get(`${BASE_URL}/users/${id}`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/${id}`);
             setUserByID(response.data)
         } catch (error) {
             console.log(error);
@@ -38,7 +37,7 @@ export function UserContextProvider({ children }) {
 
     async function getUserByIdToDisplay(id) {
         try {
-            const response = await axios.get(`${BASE_URL}/users/${id}`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/${id}`);
             return (response.data)
         } catch (error) {
             console.log(error);
@@ -47,7 +46,7 @@ export function UserContextProvider({ children }) {
 
     async function deleteUserByID(id) {
         try {
-            axios.delete(`${BASE_URL}/users/${id}`)
+            axios.delete(`${process.env.REACT_APP_SERVER_URL}/users/${id}`)
         } catch (error) {
             console.log(error);
         }
@@ -55,7 +54,7 @@ export function UserContextProvider({ children }) {
 
     async function getFavorites(id) {
         try {
-            const respones = await axios.get(`${BASE_URL}/users/favorites/${id}`);
+            const respones = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/favorites/${id}`);
             setFavorites(respones.data)
             return (respones.data);
         } catch (error) {
@@ -65,7 +64,7 @@ export function UserContextProvider({ children }) {
 
     async function getUsersPets(id) {
         try {
-            const respones = await axios.post(`${BASE_URL}/users/userpets/${id}`);
+            const respones = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/userpets/${id}`);
             return (respones.data);
         } catch (error) {
             console.log(error)
@@ -74,7 +73,7 @@ export function UserContextProvider({ children }) {
 
     async function adoptPet(user, pet) {
         try {
-            const respones = await axios.post(`${BASE_URL}/adopt?user=${user.userId}&&pet=${pet._id}`);
+            const respones = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adopt?user=${user.userId}&&pet=${pet._id}`);
             return respones ? true : false
         } catch (error) {
             console.log(error);
@@ -84,7 +83,7 @@ export function UserContextProvider({ children }) {
     async function fosterPet(user, pet) {
         try {
             const dataToPost = { user, pet };
-            const respones = await axios.post(`${BASE_URL}/users/foster/`, dataToPost);
+            const respones = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/foster/`, dataToPost);
             return respones ? true : false
         } catch (error) {
             console.log(error);
@@ -94,7 +93,7 @@ export function UserContextProvider({ children }) {
     async function returnPet(user, pet) {
         try {
             const dataToPost = { user, pet };
-            const respones = await axios.post(`${BASE_URL}/users/return`, dataToPost);
+            const respones = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/return`, dataToPost);
             return respones ? true : false
         } catch (error) {
             console.log(error);
@@ -103,7 +102,7 @@ export function UserContextProvider({ children }) {
 
     async function updateUser(dataToUpdate) {
         try {
-            const respones = await axios.put(`${BASE_URL}/users/${dataToUpdate._id}`, dataToUpdate);
+            const respones = await axios.put(`${process.env.REACT_APP_SERVER_URL}/users/${dataToUpdate._id}`, dataToUpdate);
             return respones ? true : false
         } catch (error) {
             console.log(error);
@@ -111,7 +110,7 @@ export function UserContextProvider({ children }) {
     }
     async function makeAdmin(userId) {
         try {
-            const respones = await axios.post(`${BASE_URL}/users/role?userId=${userId}`);
+            const respones = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/role?userId=${userId}`);
             return respones ? true : false;
         } catch (error) {
             console.log(error);

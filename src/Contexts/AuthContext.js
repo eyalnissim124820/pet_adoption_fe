@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 const AuthContext = React.createContext();
 
@@ -16,7 +15,7 @@ export function AuthProvider({ children }) {
 
     async function signUpUser(userToPost) {
         try {
-            const response = axios.post(`${BASE_URL}/signup`, userToPost);
+            const response = axios.post(`${process.env.REACT_APP_SERVER_URL}/signup`, userToPost);
             return response
         } catch (error) {
             console.log(error);
@@ -24,7 +23,7 @@ export function AuthProvider({ children }) {
     }
 
     async function login(loginRefs) {
-        const response = await axios.post(`${BASE_URL}/login`, loginRefs);
+        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/login`, loginRefs);
         if (response.data.token) {
             localStorage.setItem('token', response.data.token)
         }
@@ -34,7 +33,7 @@ export function AuthProvider({ children }) {
     async function verifyUser() {
         try {
             const token = await localStorage.getItem('token');
-            const response = await axios.get(`${BASE_URL}/token`, { headers: { authorization: `Bearer ${token}` } });
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/token`, { headers: { authorization: `Bearer ${token}` } });
             await setCurrentUser(response.data)
             return (response.data)
         } catch (error) {

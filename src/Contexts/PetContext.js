@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 const PetContext = React.createContext();
-const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 export function usePet() {
     return useContext(PetContext);
@@ -20,14 +19,14 @@ export function PetContextProvider({ children }) {
     async function getAllPets(filters) {
         if (filters) {
             try {
-                const response = await axios.post(`${BASE_URL}/pets/filters`, filters);
+                const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets/filters`, filters);
                 setAllPets(response.data)
             } catch (error) {
                 console.log(error);
             }
         } else {
             try {
-                const response = await axios.get(`${BASE_URL}/pets`);
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets`);
                 setAllPets(response.data)
             } catch (error) {
                 console.log(error);
@@ -37,7 +36,7 @@ export function PetContextProvider({ children }) {
 
     async function getPetByID(id) {
         try {
-            const response = await axios.get(`${BASE_URL}/pets/${id}`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`);
             setPetByID(response.data)
         } catch (error) {
             console.log(error);
@@ -46,7 +45,7 @@ export function PetContextProvider({ children }) {
 
     async function getPetFullInfo(id) {
         try {
-            const response = await axios.get(`${BASE_URL}/pets/${id}`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`);
             return response.data;
         } catch (error) {
             console.log(error)
@@ -56,7 +55,7 @@ export function PetContextProvider({ children }) {
 
     async function postAddNewPet(petToPost) {
         try {
-            const response = await axios.post(`${BASE_URL}/pets`, petToPost);
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets`, petToPost);
             return response;
         } catch (error) {
             console.log(error);
@@ -65,7 +64,7 @@ export function PetContextProvider({ children }) {
 
     async function deletePetByID(id) {
         try {
-            axios.delete(`${BASE_URL}/pets/${id}`)
+            axios.delete(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`)
         } catch (error) {
             console.log(error);
         }
@@ -73,7 +72,7 @@ export function PetContextProvider({ children }) {
 
     async function savePet(userID, petID) {
         try {
-            const response = await axios.post(`${BASE_URL}/pets/save`, { userID, petID });
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets/save`, { userID, petID });
             console.log(response.data);
         } catch (error) {
             console.log(error);
@@ -91,7 +90,7 @@ export function PetContextProvider({ children }) {
 
     async function updatePet(pet,petId){
         try {
-            const respones = await axios.put(`${BASE_URL}/pets/update/${petId}`, pet);
+            const respones = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/update/${petId}`, pet);
             return respones ? true : false
         } catch (error) {
             console.log(error);
