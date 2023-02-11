@@ -8,7 +8,7 @@ import { useUser } from '../Contexts/UserContext'
 export default function UserRow({ user }) {
 
     const navigate = useNavigate()
-    const toUserPage = () => { navigate(`/UserProfile_admin?id=${user._id}`) }
+    const toUserPage = () => { navigate(`/UserProfileAdmin?id=${user._id}`) }
 
     const {makeAdmin} = useUser()
     

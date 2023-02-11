@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useUser } from '../Contexts/UserContext';
-import "../Styles/UserProfile_admin.css"
+import "../Styles/UserProfileAdmin.css"
 import PetsList from "../componants/PetsList"
 import LoadingSpinner from '../componants/LoadingSpinner';
 
-export default function UserProfile_admin() {
+export default function UserProfileAdmin() {
 
     const URL = new URLSearchParams(window.location.search)
     const userId = URL.get('id');

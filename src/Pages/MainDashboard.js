@@ -14,7 +14,7 @@ import Users from "./Users"
 import UserProfile from './UserProfile';
 import PetPage from './PetPage';
 import LandingPage from './LandingPage';
-import UserProfile_admin from './UserProfile_admin';
+import UserProfileAdmin from './UserProfileAdmin';
 
 
 export default function MainDashboard() {
@@ -41,7 +41,7 @@ export default function MainDashboard() {
                         <Route path="Users" element={currentUser.user_role === 'admin' ? <Users /> : <SearchPets />} />
                         <Route path="UserProfile" element={currentUser ? <UserProfile /> : <SearchPets />} />
                         <Route path="PetPage" element={<PetPage />} />
-                        <Route path="UserProfile_admin" element={currentUser.user_role === 'admin' ? < UserProfile_admin /> : <SearchPets />} />
+                        <Route path="UserProfileAdmin" element={currentUser.user_role === 'admin' ? < UserProfileAdmin /> : <SearchPets />} />
                     </Routes>
                 </div>
             </div >
