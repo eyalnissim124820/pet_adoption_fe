@@ -9,7 +9,7 @@ export default function PetsList({ petListToDisplay }) {
     return (
         <ul className='listOfUserPets'>
             {
-                petListToDisplay.map((Pet) => (
+                petListToDisplay?.map((Pet) => (
                     <li key={Pet._id} ><PetCard petData={Pet} /></li>
                 ))
             }
