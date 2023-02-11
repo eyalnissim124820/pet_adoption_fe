@@ -16,7 +16,8 @@ import { useUser } from '../Contexts/UserContext'
 export default function PetCard({ petData }) {
     const { savePet, checkIfSaved } = usePet();
     const { currentUser, setLoginModal } = useAuth();
-    const { userByID, getUserByID } = useUser();
+    const { userByID, getUserByID, favorites, setFavorites } = useUser();
+
 
     const sound = new Howl({
         src: [hover]
@@ -32,6 +33,7 @@ export default function PetCard({ petData }) {
         if (currentUser) {
             setIsSaved(!isSaved);
             savePet(currentUser?.userId, petData._id)
+            setFavorites(favorites);
         } else {
             setLoginModal(true)
         }
