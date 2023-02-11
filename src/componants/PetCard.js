@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Howl, Howler } from 'howler';
+import hover from '../attachments/hover2.mp3'
 
 import "../Styles/PetCard.css"
 
@@ -15,6 +17,10 @@ export default function PetCard({ petData }) {
     const { savePet, checkIfSaved } = usePet();
     const { currentUser, setLoginModal } = useAuth();
     const { userByID, getUserByID } = useUser();
+
+    const sound = new Howl({
+        src: [hover]
+    })
 
     const [isSaved, setIsSaved] = useState(false)
     const [photoPlaceholder, setPhotoPlaceholder] = useState(noDogPhoto)
@@ -47,7 +53,7 @@ export default function PetCard({ petData }) {
 
     return (
         <div>
-            <div className='petCard' onClick={toPetPage}>
+            <div className='petCard' onClick={toPetPage} onMouseEnter={() => sound.play()}>
                 <div className='petPhoto'>
                     <div className={`favButton-${isSaved}`} onClick={(e) => { e.stopPropagation(); handleSaveFav() }}></div>
                     <img id='petPhotoImg' src={petData.picture ? petData.picture : photoPlaceholder} alt="petPhotoImg"></img></div>
