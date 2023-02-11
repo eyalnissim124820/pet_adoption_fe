@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Howl, Howler } from 'howler';
-import hover from '../attachments/hover2.mp3'
+import hover from '../attachments/hover3.mp3'
 
 import "../Styles/PetCard.css"
 

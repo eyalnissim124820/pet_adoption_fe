@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Howl, Howler } from 'howler';
-import hover from '../attachments/hover2.mp3'
+import hover from '../attachments/hover3.mp3'
 
 import "../Styles/UsersList.css"
 import UserRow from './UserRow'
