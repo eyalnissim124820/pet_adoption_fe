@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useAuth } from './AuthContext';
 
 const UserContext = React.createContext();
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 export function useUser() {
     return useContext(UserContext);

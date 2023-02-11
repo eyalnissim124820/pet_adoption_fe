@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 const PetContext = React.createContext();
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 export function usePet() {
     return useContext(PetContext);
