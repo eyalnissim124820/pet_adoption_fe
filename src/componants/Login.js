@@ -28,7 +28,6 @@ export default function NavigationBarLogin({ setIsOpen }) {
                 setIsOpen(false)
             }
         } catch (error) {
-            console.log(error.response.data);
             setErrorMsg(error.response.data);
         }
     }
