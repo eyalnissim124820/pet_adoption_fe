@@ -54,7 +54,7 @@ export default function PetCard({ petData }) {
 
     return (
         <div>
-            <div className='petCard' onClick={toPetPage} onMouseEnter={() => sound.play()} onMouseLeave={()=>sound.pause()}>
+            <div className='petCard' onClick={toPetPage} onMouseEnter={() => sound.play()} >
                 <div className='petPhoto'>
                     <div className={`favButton-${isSaved}`} onClick={(e) => { e.stopPropagation(); handleSaveFav() }}></div>
                     <img id='petPhotoImg' src={petData.picture ? petData.picture : photoPlaceholder} alt="petPhotoImg"></img></div>

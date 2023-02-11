@@ -14,10 +14,10 @@ export default function UsersList({ UsersListToDisplay }) {
 
     return (
         <>
-            <ul className='listOfUsers' onMouseEnter={() => sound.play()} onMouseLeave={() => sound.pause()}>
+            <ul className='listOfUsers'>
                 {
                     UsersListToDisplay?.map((user) => (
-                        <li key={user?._id} className='userRow'><UserRow user={user} /></li>
+                        <li key={user?._id} className='userRow'><UserRow user={user} onMouseEnter={() => sound.play()} /></li>
                     ))
                 }
             </ul>
