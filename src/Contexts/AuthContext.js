@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
             const response = axios.post(`${process.env.REACT_APP_SERVER_URL}/signup`, userToPost);
             return response
         } catch (error) {
-            console.log(error);
+            return (error);
         }
     }
 
@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
             await setCurrentUser(response.data)
             return (response.data)
         } catch (error) {
-            console.log("Not a user");
+            return ("Not a user");
         }
     }
 
