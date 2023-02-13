@@ -85,7 +85,7 @@ export default function NavigationBarSignUp({ setIsOpen, setToggle }) {
                     </label>
                 </div>
                 <label>
-                    <p>Phone Number</p>
+                    <p>Phone Number <small>(xxx-xxx-xxxx)</small></p>
                     <input ref={phone_numberRef} type='tel' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></input>
                 </label>
                 <input className='submitButton' type='submit' value='Sign Up'></input>
