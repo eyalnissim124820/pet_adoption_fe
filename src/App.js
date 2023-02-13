@@ -31,6 +31,7 @@ function App() {
                 <img src={PWBtext} alt="PWBtext" id='od-PWBtext'></img>
               </div>
               <div className='od-body'>
+              <div className='od-title'>Welcome To <p>Pets With Benefits.</p>You can use our service on your desktop...</div>
               <div className='macontainer'>
                   <img src={video} alt='video' id='video' />
                   <img src={imacPhoto} alt='imacPhoto' id='mac' />
