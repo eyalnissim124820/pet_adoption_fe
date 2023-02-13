@@ -36,6 +36,7 @@ export default function PetPage() {
 
     const navigate = useNavigate()
     const toSearchPets = () => { navigate('/SearchPets') }
+    const goBack = () => { navigate(-1) }
     const toMyPets = () => { navigate('/MyPets') }
 
     function handleSaveFav() {
@@ -105,7 +106,7 @@ export default function PetPage() {
                             <h3 className='Pets-header-h3'>Pet's Page</h3>
                         </div>
                         <div className='PetPage-container-header'>
-                            <button className='backButton' onClick={toSearchPets}><img src={backImg} alt='backImg'></img></button>
+                            <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
                             <h3>Go Back</h3>
                             <div className='petStatusAndFavorit'>
                                 {currentUser.user_role === "admin" ? <img src={edit} alt='' className='edit' onClick={() => { setEditModal(true) }} /> : ""}
