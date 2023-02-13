@@ -10,7 +10,8 @@ import { useUser } from '../Contexts/UserContext'
 export default function Users() {
 
   const navigate = useNavigate()
-  const toSearchPets = () => { navigate('/SearchPets') }
+  const goBack = () => { navigate(-1) }
+
 
   const { allUsers, getAllUsers } = useUser()
 
@@ -26,7 +27,7 @@ export default function Users() {
           <h3 className='users-header-h3'>Users</h3>
         </div>
         <div className='users-container-header'>
-          <button className='backButton' onClick={toSearchPets}><img src={backImg} alt='backImg'></img></button>
+          <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
           <h3>Go Back</h3>
         </div>
         <hr id="headerDiv"></hr>

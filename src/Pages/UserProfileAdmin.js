@@ -3,6 +3,9 @@ import { useUser } from '../Contexts/UserContext';
 import "../Styles/UserProfileAdmin.css"
 import PetsList from "../componants/PetsList"
 import LoadingSpinner from '../componants/LoadingSpinner';
+import backImg from "../attachments/images/line-angle-back-icon.svg"
+import { useNavigate } from 'react-router-dom';
+
 
 export default function UserProfileAdmin() {
 
@@ -15,6 +18,9 @@ export default function UserProfileAdmin() {
 
     const { getUserByIdToDisplay, getUsersPets } = useUser()
 
+    const navigate = useNavigate()
+    const goBack = () => { navigate(-1) }
+  
     useEffect(() => {
         loadData(userId)
     }, [])
@@ -38,6 +44,11 @@ export default function UserProfileAdmin() {
                         <div className='userProfile-header'>
                             <h1>{userInfo?.first_name}'s details</h1>
                         </div>
+                        <div className='favorites-container-header'>
+                            <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
+                            <h3>Go Back</h3>
+                        </div>
+                        <hr id="headerDiv"></hr>
                         <div className='userProfile-container-admin'>
                             <form className='form'>
                                 <div className='smallInput'>
@@ -51,14 +62,14 @@ export default function UserProfileAdmin() {
                                     </label>
                                 </div>
                                 <div className='smallInput'>
-                                <label>
-                                    <p>Email</p>
-                                    <p id='info'>{userInfo?.email}</p>
-                                </label>
-                                <label>
-                                    <p>Phone Number</p>
-                                    <p id='info'> {userInfo?.phone}</p>
-                                </label>
+                                    <label>
+                                        <p>Email</p>
+                                        <p id='info'>{userInfo?.email}</p>
+                                    </label>
+                                    <label>
+                                        <p>Phone Number</p>
+                                        <p id='info'> {userInfo?.phone}</p>
+                                    </label>
                                 </div>
                             </form>
                             <div className='usersPetsTitle'><p>Pets</p></div>

@@ -14,7 +14,8 @@ import LoadingSpinner from '../componants/LoadingSpinner'
 export default function MyPets() {
 
   const navigate = useNavigate()
-  const toSearchPets = () => { navigate('/SearchPets') }
+  const goBack = () => { navigate(-1) }
+
 
   const [petList, setPetList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -42,7 +43,7 @@ export default function MyPets() {
         <h1>My Pets</h1>
       </div>
       <div className='favorites-container-header'>
-        <button className='backButton' onClick={toSearchPets}><img src={backImg} alt='backImg'></img></button>
+        <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
         <h3>Go Back</h3>
       </div>
       <hr id="headerDiv"></hr>

@@ -4,6 +4,10 @@ import "../Styles/userProfile.css"
 import userPhotoIcon from "../attachments/images/userPhotoIcon.svg"
 import { useUser } from '../Contexts/UserContext'
 import { useAuth } from '../Contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
+
+import backImg from "../attachments/images/line-angle-back-icon.svg"
+
 
 export default function UserProfile() {
 
@@ -11,6 +15,9 @@ export default function UserProfile() {
     const { currentUser, verifyUser, setCurrentUser } = useAuth()
 
     const [userInfo, setUserInfo] = useState(userByID)
+
+    const navigate = useNavigate()
+    const goBack = () => { navigate(-1) }
 
     function handleChange(e) {
         setUserInfo({
@@ -40,6 +47,11 @@ export default function UserProfile() {
             <div className='userProfile-header'>
                 <h1>Profile</h1>
             </div>
+            <div className='favorites-container-header'>
+                <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
+                <h3>Go Back</h3>
+            </div>
+            <hr id="headerDiv"></hr>
             <div className='userProfile-container'>
                 <img src={userPhotoIcon} alt="userPhotoIcon"></img>
                 <form className='form' onSubmit={handleOnSubmit}>

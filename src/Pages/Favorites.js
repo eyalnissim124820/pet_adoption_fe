@@ -18,7 +18,8 @@ export default function Favorites() {
   const { currentUser } = useAuth()
 
   const navigate = useNavigate()
-  const toSearchPets = () => { navigate('/SearchPets') }
+  const goBack = () => { navigate(-1) }
+
 
   async function setList() {
     await getFavorites(currentUser?.userId);
@@ -35,7 +36,7 @@ export default function Favorites() {
         <h1>Favorites</h1>
       </div>
       <div className='favorites-container-header'>
-        <button className='backButton' onClick={toSearchPets}><img src={backImg} alt='backImg'></img></button>
+        <button className='backButton' onClick={goBack}><img src={backImg} alt='backImg'></img></button>
         <h3>Go Back</h3>
       </div>
       <hr id="headerDiv"></hr>
