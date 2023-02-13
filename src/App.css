@@ -12,3 +12,65 @@
   text-align: center;
   height: 100%;
 }
+
+.onlyDesktop {
+  background-color: white;
+  height: 100%;
+  display: none;
+  z-index: 20 !important;
+}
+
+.od-header {
+  background-color: white;
+  height: 12%;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.od-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.od-body img {
+  padding: 0px 40px;
+}
+
+.od-title {
+  color: #1F2122;
+  font-weight: 110;
+  font-size: 31.7081px;
+  line-height: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  padding-top: 40px;
+}
+
+.od-title p {
+  background: linear-gradient(106.39deg, #8744E1 3.78%, #FABA6E 49.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.7081px;
+  line-height: 38px;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 660px) {
+  .page-mainDashboard {
+    display: none !important;
+  }
+  .onlyDesktop{
+    display: flex;
+    flex-direction: column;
+  }
+}
