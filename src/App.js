@@ -5,7 +5,9 @@ import LandingPage from './Pages/LandingPage';
 import MainDashboard from "./Pages/MainDashboard"
 import PWBLogo from "./attachments/PWB icon2.svg"
 import PWBtext from "./attachments/Pets WithBenefits.svg"
-import imacPhoto from "./attachments/od-imac.png"
+import imacPhoto from "./attachments/Group 316.svg"
+import video from './attachments/Screen Recording 2023-02-14 at 0.17.03.gif'
+
 
 import { useAuth } from './Contexts/AuthContext';
 import { PetContextProvider } from './Contexts/PetContext';
@@ -29,8 +31,10 @@ function App() {
                 <img src={PWBtext} alt="PWBtext" id='od-PWBtext'></img>
               </div>
               <div className='od-body'>
-                <div className='od-title'>Welcome To <p>Pets With Benefits.</p>You can use our service on your desktop...</div>
-                <img src={imacPhoto} alt='imacPhoto' />
+              <div className='macontainer'>
+                  <img src={video} alt='video' id='video' />
+                  <img src={imacPhoto} alt='imacPhoto' id='mac' />
+                </div>
               </div>
             </div>
           </div>
