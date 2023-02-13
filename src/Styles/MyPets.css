@@ -5,7 +5,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.myPets-header{
+
+.myPets-header {
     background-color: #F6F6F8;
 }
 
@@ -26,7 +27,7 @@
     padding-bottom: 10px;
 }
 
-.MyPets-container{
+.MyPets-container {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -50,7 +51,14 @@
     text-overflow: clip;
 }
 
-.userPets{
+.userPets {
     padding: 0px 20px 0px 20px;
     width: 100%;
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.userPets::-webkit-scrollbar {
+    display: none;
 }

@@ -32,7 +32,8 @@
     gap: 5px;
     margin-bottom: 5px;
 }
-#petName h3{
+
+#petName h3 {
     font-size: 31px;
 
 }
@@ -172,7 +173,7 @@
     background-image: url('../attachments/images/FavIcon.svg');
 }
 
-.edit{
+.edit {
     height: 33px;
 }
 
@@ -304,4 +305,83 @@
 .deletePet:active {
     background-color: rgba(186, 0, 0, 0.645);
     color: white !important;
+}
+
+.adoptedAlert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    width: 435px;
+    height: 240px;
+    margin: auto;
+    padding: 40px 60px;
+    user-select: none;
+
+}
+
+.aa-title {
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 49px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    text-align: center;
+    letter-spacing: 0.005em;
+
+    background: linear-gradient(266.27deg, #FFB864 30.29%, #8744E1 103.61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.aa-body {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.005em;
+
+    color: #6A6A6A;
+}
+
+.aa-button {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+
+    width: 134px;
+    height: 40px;
+
+    background: #8744E1;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+    cursor: pointer;
+    user-select: none;
+}
+
+.aa-button:hover {
+    background: #6812d8;
+}
+
+.aa-button:active {
+    background: #4f1799;
 }

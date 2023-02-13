@@ -28,6 +28,7 @@ export default function PetPage() {
     const { userByID, getUserByID, adoptPet, fosterPet, returnPet } = useUser()
 
     const [editModal, setEditModal] = useState(false);
+    const [actionModal, setActionModal] = useState(false)
 
     const [isSaved, setIsSaved] = useState(false)
     const [isMine, setIsMine] = useState(false)
@@ -35,6 +36,7 @@ export default function PetPage() {
 
     const navigate = useNavigate()
     const toSearchPets = () => { navigate('/SearchPets') }
+    const toMyPets = () => { navigate('/MyPets') }
 
     function handleSaveFav() {
         if (currentUser) {
@@ -57,8 +59,11 @@ export default function PetPage() {
         setIsSaved(checkIfSaved(userByID?.saved_pets, petByID?._id))
     }
 
-    function handleAdopt() {
-        adoptPet(currentUser, petByID);
+    async function handleAdopt() {
+        const res = await adoptPet(currentUser, petByID);
+        if (res) {
+            setActionModal(true)
+        }
         getPetByID(petId);
     }
 
@@ -153,10 +158,21 @@ export default function PetPage() {
             {
                 editModal ?
                     <Modal setIsOpen={setEditModal}>
-                        <PetForm setIsOpen={setEditModal} petInfo={petByID}/>
+                        <PetForm setIsOpen={setEditModal} petInfo={petByID} />
                     </Modal>
                     :
                     ''
+            }
+            {
+                actionModal ?
+                    <Modal setIsOpen={setActionModal}>
+                        <div className='adoptedAlert'>
+                            <div className='aa-title'>congratulations</div>
+                            <div className='aa-body'>You adopted a new friend for life!</div>
+                            <div className='aa-button' onClick={toMyPets}>Go to my pets</div>
+                        </div>
+                    </Modal>
+                    : ''
             }
         </>
 
