@@ -167,8 +167,27 @@ export default function PetPage() {
                 actionModal ?
                     <Modal setIsOpen={setActionModal}>
                         <div className='adoptedAlert'>
-                            <div className='aa-title'>congratulations</div>
-                            <div className='aa-body'>You adopted a new friend for life!</div>
+                            <div>
+
+                                <div className='aa-title'>
+                                    {petByID.adoptionStatus === 'Adopted' || petByID.adoptionStatus === 'Fostered' ?
+                                        `congratulations`
+                                        :
+                                        `We sorry to hear`
+                                    }
+                                </div>
+                                <div className='aa-body'>
+                                    {
+                                        petByID.adoptionStatus === 'Adopted' ?
+                                            `You adopted ${petByID.name} as new friend for life!`
+                                            :
+                                            petByID.adoptionStatus === 'Fostered' ?
+                                                `You fostered ${petByID.name}!`
+                                                :
+                                                `You returend ${petByID.name}`
+                                    }
+                                </div>
+                            </div>
                             <div className='aa-button' onClick={toMyPets}>Go to my pets</div>
                         </div>
                     </Modal>
